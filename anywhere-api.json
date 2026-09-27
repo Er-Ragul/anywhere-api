@@ -97,7 +97,9 @@
       "parameters": {
         "path": "register",
         "responseMode": "responseNode",
-        "options": {}
+        "options": {
+          "allowedOrigins": "*"
+        }
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
@@ -261,7 +263,9 @@
       "parameters": {
         "path": "connect",
         "responseMode": "responseNode",
-        "options": {}
+        "options": {
+          "allowedOrigins": "*"
+        }
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
@@ -281,7 +285,7 @@
       "type": "n8n-nodes-base.ssh",
       "typeVersion": 1,
       "position": [
-        96,
+        320,
         544
       ],
       "id": "f7bbede4-0d97-421c-a700-0d6377b875c1",
@@ -302,7 +306,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        96,
+        320,
         800
       ],
       "id": "3de8b896-c962-4476-9c40-5f62d938bc3a",
@@ -317,7 +321,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        784,
+        1008,
         544
       ],
       "id": "fac68eae-468e-40d3-8e8d-acd89a946c7f",
@@ -330,7 +334,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        320,
+        544,
         544
       ],
       "id": "d3cb25ba-c8f5-429c-a9c7-a1b40cc37e6a",
@@ -340,7 +344,9 @@
       "parameters": {
         "path": "disconnect",
         "responseMode": "responseNode",
-        "options": {}
+        "options": {
+          "allowedOrigins": "*"
+        }
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
@@ -355,7 +361,7 @@
     {
       "parameters": {
         "operation": "verify",
-        "token": "={{ $json.headers.bearer }}",
+        "token": "={{ $json.token }}",
         "options": {
           "complete": true
         }
@@ -363,7 +369,7 @@
       "type": "n8n-nodes-base.jwt",
       "typeVersion": 1,
       "position": [
-        -160,
+        64,
         704
       ],
       "id": "474a9692-8382-470e-916b-200f71c4f6ce",
@@ -380,7 +386,7 @@
     {
       "parameters": {
         "operation": "verify",
-        "token": "={{ $json.headers.bearer }}",
+        "token": "={{ $json.token }}",
         "options": {
           "complete": true
         }
@@ -388,7 +394,7 @@
       "type": "n8n-nodes-base.jwt",
       "typeVersion": 1,
       "position": [
-        -176,
+        80,
         1136
       ],
       "id": "27442024-b4f1-438c-83f9-fe7d3f3e6db0",
@@ -413,7 +419,7 @@
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1.5,
       "position": [
-        544,
+        768,
         544
       ],
       "id": "ac4aacf5-cd25-4515-9c0e-89c540b9cb24",
@@ -432,7 +438,7 @@
       "type": "n8n-nodes-base.ssh",
       "typeVersion": 1,
       "position": [
-        96,
+        352,
         1024
       ],
       "id": "479e98b1-2769-4fe0-a545-19388a41e798",
@@ -453,7 +459,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        96,
+        352,
         1264
       ],
       "id": "b2742488-0db2-47af-b119-5476e3ee602a",
@@ -468,7 +474,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.5,
       "position": [
-        320,
+        576,
         1024
       ],
       "id": "dc3f2037-7b70-4d07-b3c9-21422589706a",
@@ -485,7 +491,7 @@
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1.5,
       "position": [
-        544,
+        800,
         1024
       ],
       "id": "51a56bef-5e04-405b-a108-b68dc2d58157",
@@ -506,7 +512,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        768,
+        1024,
         1024
       ],
       "id": "33046145-d27f-4880-8a6c-253cf84d0e8f",
@@ -521,7 +527,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.5,
       "position": [
-        96,
+        368,
         1984
       ],
       "id": "14a9cfe1-a919-4647-9477-cb0df2b19dc4",
@@ -534,7 +540,7 @@
       "type": "n8n-nodes-base.ssh",
       "typeVersion": 1,
       "position": [
-        544,
+        816,
         1984
       ],
       "id": "e339e4af-5d70-4f0c-8cc9-3c935a3e0121",
@@ -555,7 +561,7 @@
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1.5,
       "position": [
-        768,
+        1040,
         1984
       ],
       "id": "3bb47915-288c-4c4b-88d8-435398862fdf",
@@ -576,7 +582,7 @@
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1.5,
       "position": [
-        320,
+        592,
         1984
       ],
       "id": "5da0904b-1e87-4df7-a471-c2985db13d16",
@@ -593,7 +599,9 @@
         "httpMethod": "POST",
         "path": "admin/delete",
         "responseMode": "responseNode",
-        "options": {}
+        "options": {
+          "allowedOrigins": "*"
+        }
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
@@ -608,7 +616,7 @@
     {
       "parameters": {
         "operation": "verify",
-        "token": "={{ $json.headers.bearer }}",
+        "token": "={{ $json.token }}",
         "options": {
           "complete": true
         }
@@ -616,7 +624,7 @@
       "type": "n8n-nodes-base.jwt",
       "typeVersion": 1,
       "position": [
-        -176,
+        96,
         2096
       ],
       "id": "33fed51a-c85e-4cd9-922a-5c182c8bf71c",
@@ -638,7 +646,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        1632,
+        1904,
         1984
       ],
       "id": "04a22943-fd71-4b7f-90ad-90ce62c324c7",
@@ -653,7 +661,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        96,
+        368,
         2224
       ],
       "id": "a4ab95bb-3af4-4803-b8e9-5c3f874705e2",
@@ -664,7 +672,9 @@
         "httpMethod": "POST",
         "path": "/admin/disconnect",
         "responseMode": "responseNode",
-        "options": {}
+        "options": {
+          "allowedOrigins": "*"
+        }
       },
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
@@ -679,7 +689,7 @@
     {
       "parameters": {
         "operation": "verify",
-        "token": "={{ $json.headers.bearer }}",
+        "token": "={{ $json.token }}",
         "options": {
           "complete": true
         }
@@ -687,7 +697,7 @@
       "type": "n8n-nodes-base.jwt",
       "typeVersion": 1,
       "position": [
-        -176,
+        96,
         1616
       ],
       "id": "65dec325-b1f5-462a-b811-1e1fae9c973d",
@@ -710,7 +720,7 @@
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1.5,
       "position": [
-        96,
+        368,
         1488
       ],
       "id": "728ff51d-9ba0-4363-8960-10432b48d265",
@@ -731,7 +741,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.5,
       "position": [
-        544,
+        816,
         1488
       ],
       "id": "5e9d4991-9291-4921-8e43-67782136cdea",
@@ -748,7 +758,7 @@
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1.5,
       "position": [
-        768,
+        1040,
         1488
       ],
       "id": "1fb564d2-1edc-488f-b55b-37074e8cd402",
@@ -769,7 +779,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        992,
+        1264,
         1488
       ],
       "id": "7e33fc86-f6fa-4a22-bf7a-254f74d49645",
@@ -784,7 +794,7 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        96,
+        368,
         1744
       ],
       "id": "a5e37990-eb77-45cc-ab6d-a78cbe0e4a75",
@@ -797,7 +807,7 @@
       "type": "n8n-nodes-base.ssh",
       "typeVersion": 1,
       "position": [
-        320,
+        592,
         1488
       ],
       "id": "d566ac54-ceca-473b-ba64-b5c7053807ab",
@@ -975,7 +985,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1216,
+        1488,
         1984
       ],
       "id": "937e365b-7b19-4449-8c31-9874456dc4ea",
@@ -989,7 +999,7 @@
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1.5,
       "position": [
-        992,
+        1264,
         1984
       ],
       "id": "2c9a1b91-cc25-4c86-bc83-7c7a93658113",
@@ -1012,7 +1022,7 @@
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1.5,
       "position": [
-        1424,
+        1696,
         1984
       ],
       "id": "4eea9b96-13b9-4e10-9c42-07ca894c66bf",
@@ -1023,6 +1033,58 @@
           "name": "MongoDB account"
         }
       }
+    },
+    {
+      "parameters": {
+        "jsCode": "let token = $input.first().json.headers.authorization.split(' ')[1]\nreturn [\n  {\n    token\n  }\n]"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        704
+      ],
+      "id": "2d548775-2574-4973-9c29-837b95f12a36",
+      "name": "connect-bearer"
+    },
+    {
+      "parameters": {
+        "jsCode": "let token = $input.first().json.headers.authorization.split(' ')[1]\nreturn [\n  {\n    token\n  }\n]"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        1136
+      ],
+      "id": "55a29bc3-e66d-4273-a46f-3a6497e5cd3f",
+      "name": "disconnect-bearer"
+    },
+    {
+      "parameters": {
+        "jsCode": "let token = $input.first().json.headers.authorization.split(' ')[1]\nreturn [\n  {\n    token\n  }\n]"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        1616
+      ],
+      "id": "7c3fda2a-18cf-453e-9edc-42cd0b44a377",
+      "name": "admin-bearer"
+    },
+    {
+      "parameters": {
+        "jsCode": "let token = $input.first().json.headers.authorization.split(' ')[1]\nreturn [\n  {\n    token\n  }\n]"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        2096
+      ],
+      "id": "55fff412-13fe-4113-8a38-49ea6fcef56c",
+      "name": "delete-bearer"
     }
   ],
   "pinData": {},
@@ -1163,7 +1225,7 @@
       "main": [
         [
           {
-            "node": "verify-connect",
+            "node": "connect-bearer",
             "type": "main",
             "index": 0
           }
@@ -1196,7 +1258,7 @@
       "main": [
         [
           {
-            "node": "verify-disconnect",
+            "node": "disconnect-bearer",
             "type": "main",
             "index": 0
           }
@@ -1336,7 +1398,7 @@
       "main": [
         [
           {
-            "node": "verify-delete",
+            "node": "delete-bearer",
             "type": "main",
             "index": 0
           }
@@ -1365,7 +1427,7 @@
       "main": [
         [
           {
-            "node": "verify-admin-disconnect",
+            "node": "admin-bearer",
             "type": "main",
             "index": 0
           }
@@ -1550,6 +1612,50 @@
           }
         ]
       ]
+    },
+    "connect-bearer": {
+      "main": [
+        [
+          {
+            "node": "verify-connect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "disconnect-bearer": {
+      "main": [
+        [
+          {
+            "node": "verify-disconnect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "admin-bearer": {
+      "main": [
+        [
+          {
+            "node": "verify-admin-disconnect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "delete-bearer": {
+      "main": [
+        [
+          {
+            "node": "verify-delete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "active": false,
@@ -1557,7 +1663,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "7f3a7b8d-641e-4863-aa8b-cfc556433731",
+  "versionId": "dcf9a48a-1093-4c42-be76-81ac03ca08cb",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "b115799af22cb6d08ae9e89686e73b369812b0d8650d2988980ec2c6068af9f3"
